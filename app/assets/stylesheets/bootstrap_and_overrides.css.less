@@ -30,3 +30,58 @@ body {
 //
 // Example:
 // @linkColor: #ff0000;
+
+//角丸
+.roundrect(@r:10px){
+  -webkit-border-radius:@r;
+  -moz-border-radius:@r;
+  border-radius:@r;
+}
+//グラデーション
+.vgradient(@s:#ffffff, @e:#000000){
+  background: -webkit-gradient( linear, left top, left bottom, from(@s), to(@e) );
+  background:-moz-linear-gradient( top, @s, @e );
+}
+.hgradient(@s:#ffffff, @e:#000000){
+  background: -webkit-gradient( linear, left top, right top, from(@s), to(@e) );
+  background:-moz-linear-gradient( left, @s, @e );
+}
+//影
+.boxshadow(@hLen:5px, @vLen:5px, @blur:3px, @color:#000000){
+  -webkit-box-shadow : @hLen @vLen @blur @color;
+  -moz-box-shadow : @hLen @vLen @blur @color;
+  box-shadow : @hLen @vLen @blur @color;
+}
+.innershadow(@hLen:5px, @vLen:5px, @blur:3px, @color:#000000){
+  -webkit-box-shadow : inset @hLen @vLen @blur @color;
+  -moz-box-shadow : inset @hLen @vLen @blur @color;
+  box-shadow : inset @hLen @vLen @blur @color;
+} 
+
+div#wrapper{
+    padding:20px;
+    .vgradient(#cccccc, #dddddd);
+    .roundrect();
+    .innershadow(3px,3px,3px,#555555);
+}
+
+div.post{
+    background-color: #ffffff;
+    .roundrect();
+    .boxshadow(3px,3px,3px,#555555);
+
+  div.message{
+    padding: 10px;
+    padding-left:90px;
+  }
+  div.posted_at{
+    padding: 5px;
+    padding-right: 15px;
+    text-align:right;
+  }
+}
+div#sidemenu{
+    padding:20px;
+    .vgradient(#cccccc, #dddddd);
+    .roundrect();
+}

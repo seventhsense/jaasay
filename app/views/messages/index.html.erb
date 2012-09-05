@@ -9,7 +9,6 @@
           <div class="posted_at"><p>posted at <%=l message.created_at %></p></div>
         </div>
         <hr />
-
       <% end %>
       <table class="table table-striped">
         <thead>
@@ -42,9 +41,7 @@
         </div>
       </div>
 
-        <%= f.submit 'Post', :class => 'btn btn-primary' %>
-        <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
-          :class => 'btn' %>
+        <%= f.submit 'Post', :class => 'btn btn-primary span3' %>
     <% end %>
   </div>
 </div><!--/span-->

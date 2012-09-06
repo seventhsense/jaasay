@@ -1,6 +1,6 @@
 class MessagesController < ApplicationController
   def index
-    @messages = Message.order('created_at desc')
+    @messages = Message.order('created_at desc').limit(5)
     @message = Message.new
   end
 
@@ -8,6 +8,5 @@ class MessagesController < ApplicationController
     @message = Message.new(params[:message])
     @message.template_id = 1
     @message.save!
-    redirect_to root_path
   end
 end

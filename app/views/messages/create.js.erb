@@ -1,0 +1,4 @@
+$("#wrapper").prepend("<%= j render @message %><hr>");
+$("#wrapper > div.post:first").hide().slideDown("fast");
+$("#new_message")[0].reset();
+

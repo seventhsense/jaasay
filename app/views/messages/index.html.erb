@@ -1,43 +1,17 @@
   <%- model_class = Message -%>
-    <div class="span6">
-  <div id="wrapper">
-      <% @messages.each do |message| %>
-        <div class="post">
-          <div class="message textar-aa">
-            <%= aa_adaptor message.template.aa, message.content %>
-          </div>
-          <div class="posted_at"><p>posted at <%=l message.created_at %></p></div>
-        </div>
-        <hr />
-      <% end %>
-      <table class="table table-striped">
-        <thead>
-          <tr>
-            <th><%= model_class.human_attribute_name(:content) %></th>
-            <th><%= model_class.human_attribute_name(:template_id) %></th>
-            <th><%= model_class.human_attribute_name(:created_at) %></th>
-          </tr>
-        </thead>
-        <tbody>
-          <% @messages.each do |message| %>
-            <tr>
-              <td><%= message.content %></td>
-              <td><%= message.template_id %></td>
-              <td><%=l message.created_at %></td>
-            </tr>
-          <% end %>
-        </tbody>
-      </table>
+  <div class="span6">
+    <div id="wrapper">
+        <%= render partial: 'message',collection: @messages, spacer_template: "spacer" %>
     </div>
   </div>
 
 <div class="span4">
   <div id="sidemenu"
     <h3>Post Message</h3>
-    <%= form_for @message, :html => { :class => 'form-vertical' } do |f| %>
+    <%= form_for @message, remote: true, :html => { :class => 'form-vertical' } do |f| %>
       <div class="control-group">
         <div class="controls">
-          <%= f.text_field :content, :class => 'text_field span3' %>
+          <%= f.text_field :content,id: "new_message", :class => 'text_field span3' %>
         </div>
       </div>
 

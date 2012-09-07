@@ -1,4 +1,8 @@
 <% publish_to "/messages/new" do %>
+  if ($("#wrapper > div.post").size() > 5 ){
+    $("#wrapper > div.post:last").remove();
+    $("#wrapper > hr:last").remove();
+  }
   $("#wrapper").prepend("<%= j render @message %><hr>");
   $("#wrapper > div.post:first").hide().slideDown("fast");
 <% end %>

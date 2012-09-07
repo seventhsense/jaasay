@@ -1,4 +1,6 @@
-$("#wrapper").prepend("<%= j render @message %><hr>");
-$("#wrapper > div.post:first").hide().slideDown("fast");
+<% publish_to "/messages/new" do %>
+  $("#wrapper").prepend("<%= j render @message %><hr>");
+  $("#wrapper > div.post:first").hide().slideDown("fast");
+<% end %>
 $("#new_message")[0].reset();
 

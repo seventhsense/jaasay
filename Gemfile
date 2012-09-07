@@ -52,3 +52,6 @@ gem "guard-rspec", :group => :test
 gem "guard-cucumber", :group => :test
 gem "factory_girl_rails", :group => :test
 gem "simplecov", :group => :test
+
+gem 'private_pub'
+gem 'thin'

@@ -55,3 +55,4 @@ gem "simplecov", :group => :test
 
 gem 'private_pub'
 gem 'thin'
+gem 'heroku'

@@ -1,0 +1,1 @@
+sample messaging rails app using pivate_pub gem
